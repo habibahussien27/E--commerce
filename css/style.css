@@ -129,8 +129,9 @@ header .top-nav
 nav {
     display: flex;
     justify-content:space-around;
-    border-top: 2px solid var(--border-color);
-    padding:20px ;
+    align-items:center;
+    border: 2px solid var(--border-color) ;
+    padding: 20px;
 }
 
 header .links{
@@ -141,9 +142,8 @@ align-items: center;
 
 header .links ul{
 display: flex;
-gap: 50px;
+gap: 100px;
 }
-
 
 
 header .links ul li a{
@@ -153,6 +153,33 @@ header .links ul li a{
     font-weight: 400;
 }
 
-.login-signup{
-gap: 50px;
+header .links ul li{
+    position: relative;
 }
+
+header .links ul li a::after{
+    content:'';
+    width: 0%;
+    height: 2px;
+    background-color: var(--main-color);
+    position: absolute;
+    bottom:-20px;
+    left: 0px;
+    transition: 0.5s ease;
+}
+header .links ul li a.active::after,
+header .links ul li a:hover::after{
+    width: 100%;
+}
+
+
+    header .login_signup a{
+        color: var(--dark-color);
+        background-color:var(--main-color);
+        padding: 10px ;
+        border-radius:5px;
+        margin:0 10px;
+    }
+
+
+    
