@@ -32,8 +32,9 @@ p{
 }
 
 .container{
-width: 75%;
-margin: auto;
+    width: 100%;
+    max-width: 1400px;
+    margin-inline: auto;
 }
 
 /* header */
@@ -44,7 +45,7 @@ header{
     right: 0;
     top: 0;
     background-color: #ffffff;
-
+z-index: 9999;
 }
 header .top_nav
 {
@@ -59,8 +60,8 @@ header .top_nav
 }
 
 .top_nav .search{
-    width:500px;
-    
+    width:35%;
+    min-width: 280px;
     border: 2px solid var(--main-color);
     position: relative;
     border-radius:5px;
@@ -79,7 +80,7 @@ header .top_nav
     position: absolute;
     right: 0;
     top: 0 ;
-    width:170px; 
+    width:15%; 
     font-size: 16px;
     height: 100%;
     cursor: pointer;
@@ -93,7 +94,7 @@ header .top_nav
 
 .top_nav .cart_header i{
     color: var(--dark-color);
-    width: 50px;
+    width:50px;
     height: 50px;
     border: 1px solid var(--border-color);
     border-radius: 50%;
@@ -119,7 +120,6 @@ header .top_nav
     border-radius: 50%;
     line-height:20px;
     color: var(--dark-color);
-
 }
 
 .top_nav .cart_header p{
@@ -142,7 +142,7 @@ align-items: center;
 
 header .links ul{
 display: flex;
-gap: 100px;
+gap: 4vw;
 }
 
 
@@ -159,7 +159,6 @@ header .links ul li{
 
 header .links ul li a::after{
     content:'';
-    width: 0%;
     height: 2px;
     background-color: var(--main-color);
     position: absolute;
@@ -186,7 +185,7 @@ header .links ul li a:hover::after{
 
 .cart{
     position: fixed;
-    right: -300px;
+    right: -25%;
     top: 0;
     bottom: 0;
     z-index: 9999;
@@ -196,7 +195,7 @@ header .links ul li a:hover::after{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    width: 300px;
+    width: 20%;
     max-width: 100%;
     transition: 0.5s ease;
 }
@@ -231,13 +230,13 @@ font-size: 16px;
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 10px;
+    gap: 1vw;
     margin-bottom: 20px;
 }
 
 .cart_items .product img{
-width: 100px;
-height: 100px;
+width: 50px;;
+height: 50px;
 }
 .cart_items .product h4{
 font-weight: normal;
@@ -298,16 +297,19 @@ gap: 20px;
 .slider .container{
     display: flex;
     justify-content:space-between;
+    gap: 20px;
+
 }
 
 .slider .slide_bar{
-    width: 300px;
+    width: 20%;
+    min-width: 240px;
     display: flex;
     flex-direction: column;
     background-color: #ffffff;
-    margin: 20px;
-
+    height:fit-content;
 }
+
 .slider .slide_bar h2{
     font-size: 18px;
     padding: 15px;
@@ -326,10 +328,10 @@ gap: 20px;
 }
 
 .slider .slide-swap{
-    width: calc(100% - 350px);
+    flex: 1;
     overflow: hidden;
     position: relative;
-}
+} 
 
 .slider .container img{
 width: 100%;
@@ -347,21 +349,23 @@ object-position: left top;
 
 .features .container{
     display: flex;
-    justify-content: space-between;
+    justify-content:center;
     background-color: #ffffff;
-    padding:15px 20px;
     margin-block: 20px;
     border-radius: 5px;
-    flex-wrap: wrap;
+    width: 100%;
+    padding-block: 20px;
+        flex-wrap: wrap;
 
 }
 
 .features .container .item_feature{
     display: flex;
     align-items: center;
-    width: 18%;
+    width: 20%;
     min-width: 220px;
-    gap: 28px;
+    gap: 10px;
+    padding:0 20px;
 }
 
 .features .container .item_feature img{
@@ -371,4 +375,52 @@ width: 50px;
 .features .container .item_feature h4{
     font-size: 15px;
     margin-bottom: 5px;
+}
+
+/* banner */
+
+.banner .container{
+display: flex;
+justify-content: space-between;
+margin-block: 50px;
+
+}
+.banner .banner_img{
+    width: 33%;
+        position: relative;
+
+}
+
+
+.banner .banner_img img{
+    width:100% ;
+
+}
+
+.banner .glass_hover{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.banner .glass_hover::after{
+    content:'';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background:linear-gradient(50deg , transparent 50% , rgba(255,255,255,0.2) 60%,rgba(255,255,255,0.5) 70% , transparent 70%) ;
+    cursor: pointer;
+        background-position: 200% 0%;
+        transition: 1s;
+    background-size: 200% 100%;
+}
+
+.banner .banner_img:hover .glass_hover::after{
+    background-position: -20% 0%;
 }
